@@ -6,6 +6,6 @@ WORKDIR /app
 
 COPY /target/product.jar ./product.jar
 
-EXPOSE 8084
+EXPOSE 9090
 
 CMD [ "java", "-jar", "product.jar" ]

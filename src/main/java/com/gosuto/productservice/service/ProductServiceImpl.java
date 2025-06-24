@@ -31,7 +31,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductResponse getProductById(Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RessourceNotFoundException(PRODUCT_NOT_FOUND_WITH_ID + id));
+                .orElseThrow(() -> new RessourceNotFoundException(String.format(PRODUCT_NOT_FOUND_WITH_ID, id)));
         return productMapper.toDTO(product);
     }
 

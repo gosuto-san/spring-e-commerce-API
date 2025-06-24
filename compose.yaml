@@ -25,12 +25,13 @@ services:
     container_name: product-container
     restart: always
     ports:
-      - 8085:8084
+      - 8085:9090
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/product_management
       SPRING_DATASOURCE_USERNAME : admin
       SPRING_DATASOURCE_PASSWORD: passer
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_PROFILES_ACTIVE: dev
     depends_on:
       - postgres
       
